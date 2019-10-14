@@ -1,0 +1,182 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>SLBIC Management System - Web Application</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use-->
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!--Extra styling -->
+        <link rel="stylesheet" href="css/example.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-light fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img class="logo" src="images/GooglePlay-Icon.png" alt="logo" class="img-responsive">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="nav mr-auto">
+                            <li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">Contact Admin</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Admin 1</a>
+                                    <a class="dropdown-item" href="#">Admin 2</a>
+                                    <a class="dropdown-item" href="#">Admin 3</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Management</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="justify-content-end">
+                            <h3>SLBIC Management System</h3>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+      
+      
+        <div class="container-fluid justify-content-center main-content">
+            
+            
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-6 col-md-offset-3">
+                    <legend>Log In</legend>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control" id="signin-email" placeholder="Enter Your E-mail Address">
+                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email.</small>-->
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input id="signin-pwd" type="password" class="form-control input-lg" placeholder="Enter Password">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <button id="signin-btn" class="btn btn-action btn-block edit-btn">Log In</button>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+            
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-6 col-md-offset-3">
+                    <legend>Sign Up</legend>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control input-lg" id="signup-name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Surname</label>
+                        <input type="text" class="form-control input-lg" id="signup-surname" placeholder="Surname">
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select class = "form-control input-lg" id="signup-role">
+                            <option value="Administrator">Administrator</option>
+                            <option value="Viewer">Viewer</option>
+                            <option value="System Manager">System Manager</option>
+                            <option value="Guest">Guest</option>       
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" id="signup-email" class="form-control input-lg" placeholder="Enter E-mail" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="signup-pwd" class="form-control input-lg" placeholder="Enter Password" />
+                    </div>
+                    <div class="form-group">
+                        <label>Re-enter Password</label>
+                        <input type="password" id="signup-confirm" class="form-control input-lg" placeholder="Repeat Password" />
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <button class="btn btn-lg btn-primary btn-block edit-btn" id="signup-btn">Sign Up</button>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            
+            
+        
+        </div>
+        
+        <footer>
+            <div class="footer-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="footer-width">
+                                <h5 class="sz">Management</h5>
+                                <ul>
+                                    <li><a href="#">Add Central Hub</a></li>
+                                    <li><a href="#">Become an Admin</a></li>
+                                    <li><a href="#">Add A Street Light Node</a></li>
+                                    <li><a href="#">View Node Locations</a></li>
+                                    <li><a href="#">Enable/Disable Lamps</a></li>
+                                </ul>
+                                <div class="footer-social-link">
+                                    <a href="#" target="_blank"><i class="fab fa-facebook "></i></a>
+                                    <a href="#" target="_blank"><i class="fab fa-twitter "></i></a>
+                                    <a href="#" target="_blank"><i class="fab fa-linkedin "></i></a>
+                                    <a href="#" target="_blank"><i class="fab fa-youtube "></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-width">
+                                <h5 class="sz">Links</h5>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Portfolio</a></li>
+                                    <li><a href="#">Contact Admin</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-width">
+                                <form class="form-inline">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="contact-info"><i class="fa fa-map-marker"></i>This is our Address.</p>
+                                <p class="contact-info"><i class="fa fa-envelope"></i><a href="mailto:info@ourdomain.com">info@ourdomain.com</a></p>
+                                <p class="contact-info"><i class="fa fa-phone"></i><a href="tel:89898989">89898989</a></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </footer>
+     
+        <script src="firebase-front.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
